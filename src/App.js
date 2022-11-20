@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home';
+import Notes from './components/allNotes/Notes';
+import AddNotes from './components/addNotes/AddNotes';
+import { createContext, useState } from 'react';
+import EditNote from './components/editNote/EditNote';
+export const NotesContext = createContext();
 
 function App() {
+  const [notes, setNotes] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NotesContext.Provider value={{ notes, setNotes }}>
+      <Routes>
+        <Route path='/' element={<Home />} >
+          <Route index element={<Notes />} />
+          <Route path='notes' element={<Notes />} />
+          <Route path='notes/:id' element={<EditNote />} />
+          <Route path='add-notes' element={<AddNotes />} />
+        </Route>
+      </Routes>
+    </NotesContext.Provider>
   );
 }
 
