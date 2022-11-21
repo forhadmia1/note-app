@@ -1,4 +1,4 @@
-# Internship traing program task.
+# Internship training program task.
 
 ## Features
 
@@ -6,7 +6,7 @@
 - update note
 - delete note
 
-## Technologies
+## Tools & Technologies
 
 - React
 - React router

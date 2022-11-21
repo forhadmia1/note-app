@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BodySection from '../components/bodySection/BodySection';
-import Header from '../components/header/Header';
+import Header from '../components/common/Header'
 
 const Home = () => {
     const [open, setOpen] = useState(false)

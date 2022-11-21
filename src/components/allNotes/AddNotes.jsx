@@ -22,7 +22,7 @@ const AddNotes = () => {
     const handleForm = (e) => {
         e.preventDefault()
         setNotes([...notes, formData])
-        navigate('/notes')
+        navigate('/')
     }
 
     return (
