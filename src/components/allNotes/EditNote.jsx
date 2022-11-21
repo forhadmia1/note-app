@@ -28,6 +28,7 @@ const EditNote = () => {
         e.preventDefault()
         const rest = notes.filter(note => note.id !== id)
         setNotes([...rest, note])
+        localStorage.setItem('notes', JSON.stringify([...rest, note]))
         navigate('/')
     }
 

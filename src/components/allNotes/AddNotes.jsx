@@ -22,6 +22,7 @@ const AddNotes = () => {
     const handleForm = (e) => {
         e.preventDefault()
         setNotes([...notes, formData])
+        localStorage.setItem('notes', JSON.stringify([...notes, formData]))
         navigate('/')
     }
 

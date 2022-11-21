@@ -3,12 +3,19 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import Notes from './components/allNotes/Notes';
 import AddNotes from './components/allNotes/AddNotes';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import EditNote from './components/allNotes/EditNote';
 export const NotesContext = createContext();
 
 function App() {
   const [notes, setNotes] = useState([])
+
+  useEffect(() => {
+    const getNotes = localStorage.getItem('notes')
+    setNotes(JSON.parse(getNotes))
+  }, [])
+
+  console.log(notes);
   return (
     <NotesContext.Provider value={{ notes, setNotes }}>
       <Routes>
