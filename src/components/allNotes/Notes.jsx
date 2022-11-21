@@ -12,7 +12,7 @@ const Notes = () => {
 
     return (
         notes.length > 0 ?
-            <div className='p-4'>
+            <div>
                 {
                     notes.map(note => <SingleNote
                         key={note.id}
