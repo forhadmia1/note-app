@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #03203C;
+}
+
+
+@media only screen and (min-width:600px) and (max-width:1400px) {
+    .header {
+        padding: 5px 40px;
+    }
+}

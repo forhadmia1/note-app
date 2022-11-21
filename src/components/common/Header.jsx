@@ -1,9 +1,10 @@
 import React from 'react';
 import { HiMenuAlt1 } from 'react-icons/hi'
+import headerStyle from '../../styles/Header.module.css'
 
 const Header = ({ setOpen, open }) => {
     return (
-        <nav className='flex items-center justify-between py-2 bg-[#03203C] px-2 md:px-10'>
+        <nav className={`${headerStyle.header}`}>
             <div className='flex gap-2 items-center '>
                 <HiMenuAlt1 className='text-4xl cursor-pointer text-white lg:hidden' onClick={() => setOpen(!open)} />
                 <p className='text-4xl font-bold text-blue-600 cursor-pointer'>Note<span className='text-white'>App</span></p>
