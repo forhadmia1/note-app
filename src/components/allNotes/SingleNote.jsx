@@ -15,6 +15,7 @@ const SingleNote = ({ note, deleteNote }) => {
             <Td><p className='text-center'>{note.name}</p></Td>
             <Td><p className='text-center'>{note.description}</p></Td>
             <Td><p className='text-center'>{note.date}</p></Td>
+            <Td><p className='text-center'>{note.status}</p></Td>
             <Td>
                 <div className='flex gap-5 justify-center'>
                     <button onClick={() => editNote(note.id)} className='bg-red-600 p-1 rounded text-white text-lg'><BiEdit /></button>

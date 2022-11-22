@@ -28,6 +28,7 @@ const EditNote = () => {
         e.preventDefault()
         const rest = notes.filter(note => note.id !== id)
         setNotes([...rest, note])
+        //set data to the local storage
         localStorage.setItem('notes', JSON.stringify([...rest, note]))
         navigate('/')
     }
@@ -43,7 +44,7 @@ const EditNote = () => {
                             name='name'
                             type='text'
                             required={true}
-                            value={note.name}
+                            value={note?.name}
                             onChange={inputhandler}
                         />
                     </div>
@@ -53,9 +54,17 @@ const EditNote = () => {
                             name='date'
                             type='date'
                             required={true}
-                            value={note.date}
+                            value={note?.date}
                             onChange={inputhandler}
                         />
+                    </div>
+                    <div className='mt-5' >
+                        <label className='font-semibold' htmlFor="status">Status:
+                            <select value={note?.status} name='status' onChange={inputhandler}>
+                                <option value="ongoing">Ongoing</option>
+                                <option value="complete">Complete</option>
+                            </select>
+                        </label>
                     </div>
                     <div className='mt-5'>
                         <TextArea
@@ -63,14 +72,14 @@ const EditNote = () => {
                             name='description'
                             type='description'
                             required={true}
-                            value={note.description}
+                            value={note?.description}
                             onChange={inputhandler}
                         />
                     </div>
                     <div className='flex justify-end mt-5'>
                         <Button
                             type='submit'
-                        >Add Note</Button>
+                        >Edit Note</Button>
                     </div>
                 </form>
             </div>

@@ -10,12 +10,13 @@ export const NotesContext = createContext();
 function App() {
   const [notes, setNotes] = useState([])
 
+
+  //load data from local storage
   useEffect(() => {
     const getNotes = localStorage.getItem('notes')
     setNotes(JSON.parse(getNotes))
   }, [])
 
-  console.log(notes);
   return (
     <NotesContext.Provider value={{ notes, setNotes }}>
       <Routes>

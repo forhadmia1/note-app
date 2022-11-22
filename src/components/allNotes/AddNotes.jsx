@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const AddNotes = () => {
     const { notes, setNotes } = useContext(NotesContext)
-    const [formData, setFormData] = useState({ id: uuidv4(), name: '', date: '', description: '' })
+    const [formData, setFormData] = useState({ id: uuidv4(), name: '', date: '', status: 'ongoing', description: '' })
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -22,6 +22,7 @@ const AddNotes = () => {
     const handleForm = (e) => {
         e.preventDefault()
         setNotes([...notes, formData])
+        //set data to the local storage
         localStorage.setItem('notes', JSON.stringify([...notes, formData]))
         navigate('/')
     }
