@@ -60,7 +60,7 @@ const EditNote = () => {
                     </div>
                     <div className='mt-5' >
                         <label className='font-semibold' htmlFor="status">Status:
-                            <select value={note?.status} name='status' onChange={inputhandler}>
+                            <select value={note?.status} name='status' onChange={inputhandler} className='border-2 border-black rounded px-2 py-1 focus:outline-none ml-2'>
                                 <option value="ongoing">Ongoing</option>
                                 <option value="complete">Complete</option>
                             </select>
