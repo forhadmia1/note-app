@@ -33,7 +33,7 @@ const Notes = () => {
                     <div className='pb-5'>
                         <label className='font-semibold' htmlFor="">
                             Filters Notes:
-                            <select onChange={(e) => setStatus(e.target.value)} className='border-2 border-blue-700 rounded px-2 py-1 focus:outline-none ml-2'>
+                            <select onChange={(e) => setStatus(e.target.value)} className='border-2 border-blue-700 rounded px-2 py-1 focus:outline-none ml-2 cursor-pointer'>
                                 <option value=''>All</option>
                                 <option value="ongoing">Ongoing</option>
                                 <option value="complete">Complete</option>
