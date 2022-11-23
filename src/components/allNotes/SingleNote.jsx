@@ -12,12 +12,12 @@ const SingleNote = ({ note, deleteNote }) => {
 
     return (
         <Tr>
-            <Td><p className='text-center'>{note.name}</p></Td>
-            <Td><p className='text-center'>{note.description}</p></Td>
-            <Td><p className='text-center'>{note.date}</p></Td>
-            <Td><p className='text-center'>{note.status}</p></Td>
-            <Td>
-                <div className='flex gap-5 justify-center'>
+            <Td className='text-center py-1'>{note.name}</Td>
+            <Td className='text-center py-1'>{note.description}</Td>
+            <Td className='text-center py-1'>{note.date}</Td>
+            <Td className='text-center py-1'>{note.status}</Td>
+            <Td >
+                <div className='flex gap-5 justify-start md:justify-center'>
                     <button onClick={() => editNote(note.id)} className='bg-red-600 p-1 rounded text-white text-lg'><BiEdit /></button>
                     <button onClick={() => deleteNote(note.id)} className='bg-red-600 p-1 rounded text-white text-lg'><MdDeleteOutline /></button>
                 </div>

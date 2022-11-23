@@ -33,22 +33,29 @@ const AddNotes = () => {
             <div className='max-w-md mt-10'>
                 <form onSubmit={handleForm}>
                     <div>
-                        <InputField
-                            label='Name'
-                            name='name'
-                            type='text'
-                            required={true}
-                            onChange={handleChange}
-                        />
+
+                        <label htmlFor='name' className='font-semibold'>
+                            Name: <br />
+                            <InputField
+                                label='Name'
+                                name='name'
+                                type='text'
+                                required={true}
+                                onChange={handleChange}
+                            />
+                        </label>
                     </div>
                     <div className='mt-5'>
-                        <InputField
-                            label='Date'
-                            name='date'
-                            type='date'
-                            required={true}
-                            onChange={handleChange}
-                        />
+                        <label htmlFor='date' className='font-semibold'>
+                            Name: <br />
+                            <InputField
+                                label='Date'
+                                name='date'
+                                type='date'
+                                required={true}
+                                onChange={handleChange}
+                            />
+                        </label>
                     </div>
                     <div className='mt-5'>
                         <TextArea
