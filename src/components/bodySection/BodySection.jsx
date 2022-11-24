@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { CgNotes } from 'react-icons/cg'
 import { HiOutlineDocumentAdd } from 'react-icons/hi'
+import { FaBook } from 'react-icons/fa'
 
 const BodySection = ({ open, setOpen }) => {
     const { pathname } = useLocation()
@@ -15,6 +16,9 @@ const BodySection = ({ open, setOpen }) => {
                     </li>
                     <li className={`flex items-center gap-2 px-5 py-2 hover:text-blue-600 ${pathname === '/add-notes' && 'bg-white text-blue-600'}`}>
                         <HiOutlineDocumentAdd /><Link to={'/add-notes'}>Add Note</Link>
+                    </li>
+                    <li className={`flex items-center gap-2 px-5 py-2 hover:text-blue-600 ${pathname === '/books' && 'bg-white text-blue-600'}`}>
+                        <FaBook /><Link to={'/books'}>Books</Link>
                     </li>
                 </ul>
             </div>

@@ -5,6 +5,7 @@ import Notes from './components/allNotes/Notes';
 import AddNotes from './components/allNotes/AddNotes';
 import { createContext, useEffect, useState } from 'react';
 import EditNote from './components/allNotes/EditNote';
+import BooksView from './features/books/BooksView';
 export const NotesContext = createContext();
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route index element={<Notes />} />
           <Route path='notes/:id' element={<EditNote />} />
           <Route path='add-notes' element={<AddNotes />} />
+          <Route path='books' element={<BooksView />} />
         </Route>
       </Routes>
     </NotesContext.Provider>
