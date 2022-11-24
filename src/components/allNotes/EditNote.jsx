@@ -39,30 +39,24 @@ const EditNote = () => {
             <div className='max-w-md mt-10'>
                 <form onSubmit={formhandler}>
                     <div>
-                        <label htmlFor='name' className='font-semibold'>
-                            Name: <br />
-                            <InputField
-                                label='Name'
-                                name='name'
-                                type='text'
-                                required={true}
-                                value={note?.name}
-                                onChange={inputhandler}
-                            />
-                        </label>
+                        <InputField
+                            label='Name'
+                            name='name'
+                            type='text'
+                            required={true}
+                            value={note?.name}
+                            onChange={inputhandler}
+                        />
                     </div>
                     <div className='mt-5'>
-                        <label htmlFor='date' className='font-semibold'>
-                            Date: <br />
-                            <InputField
-                                label='Date'
-                                name='date'
-                                type='date'
-                                required={true}
-                                value={note?.date}
-                                onChange={inputhandler}
-                            />
-                        </label>
+                        <InputField
+                            label='Date'
+                            name='date'
+                            type='date'
+                            required={true}
+                            value={note?.date}
+                            onChange={inputhandler}
+                        />
                     </div>
                     <div className='mt-5' >
                         <label className='font-semibold' htmlFor="status">Status:
