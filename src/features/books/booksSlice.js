@@ -20,11 +20,13 @@ const booksSlice = createSlice({
         builder.addCase(fetchBooks.fulfilled, (state, action) => {
             state.isLoading = false
             state.books = action.payload
+            localStorage.setItem('books', JSON.stringify(action.payload))
             state.error = null
         })
         builder.addCase(fetchBooks.rejected, (state, action) => {
             state.isLoading = false
-            state.books = []
+            const data = localStorage.getItem('books')
+            state.books = JSON.parse(data)
             state.error = action.error.message
         })
     }
