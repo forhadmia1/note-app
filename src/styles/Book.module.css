@@ -1,0 +1,21 @@
+.bookInfo {
+    width: 0;
+    height: 100px;
+}
+
+.bookInfo>h3,
+p {
+    opacity: 0;
+}
+
+.bookContainer:hover .bookInfo {
+    width: 90%;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.bookContainer:hover .bookInfo>h3,
+p {
+    opacity: 1;
+    transition: 1s;
+}
