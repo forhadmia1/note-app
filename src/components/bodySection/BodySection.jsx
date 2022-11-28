@@ -17,8 +17,8 @@ const BodySection = ({ open, setOpen }) => {
                     <li className={`flex items-center gap-2 px-5 py-2 hover:text-blue-600 ${pathname === '/add-notes' && 'bg-white text-blue-600'}`}>
                         <HiOutlineDocumentAdd /><Link to={'/add-notes'}>Add Note</Link>
                     </li>
-                    <li className={`flex items-center gap-2 px-5 py-2 hover:text-blue-600 ${pathname === '/books' && 'bg-white text-blue-600'}`}>
-                        <FaBook /><Link to={'/books'}>Books</Link>
+                    <li className={`flex items-center gap-2 px-5 py-2 hover:text-blue-600 ${pathname === '/posts' && 'bg-white text-blue-600'}`}>
+                        <FaBook /><Link to={'/posts'}>Posts</Link>
                     </li>
                 </ul>
             </div>

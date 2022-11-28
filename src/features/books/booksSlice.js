@@ -1,9 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
-    const res = await fetch('https://api.itbook.store/1.0/search/mongodb')
-    const data = await res.json()
-    return data.books;
+    const res = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    return res.data;
+})
+export const deleteBook = createAsyncThunk('books/deleteBook', async () => {
+    const res = await axios.delete('https://jsonplaceholder.typicode.com/posts/1')
+    return res.data;
 })
 
 const booksSlice = createSlice({
@@ -20,13 +24,11 @@ const booksSlice = createSlice({
         builder.addCase(fetchBooks.fulfilled, (state, action) => {
             state.isLoading = false
             state.books = action.payload
-            localStorage.setItem('books', JSON.stringify(action.payload))
             state.error = null
         })
         builder.addCase(fetchBooks.rejected, (state, action) => {
             state.isLoading = false
-            const data = localStorage.getItem('books')
-            state.books = JSON.parse(data)
+            state.books = []
             state.error = action.error.message
         })
     }
